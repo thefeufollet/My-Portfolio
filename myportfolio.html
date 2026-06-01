@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Camille Darley — Bioinformatics PhD student and Professional AI Trainer specializing in genomics, LLM prompt engineering, and data-driven life sciences research.">
+  <title>Camille Darley | Professional AI Trainer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            display: ['Playfair Display', 'Georgia', 'serif'],
+          },
+          colors: {
+            teal: {
+              300: '#5eead4',
+              400: '#2dd4bf',
+              500: '#14b8a6',
+              600: '#0d9488',
+              700: '#0f766e',
+              900: '#134e4a',
+            },
+            purple: {
+              300: '#c4b5fd',
+              400: '#a78bfa',
+              500: '#8b5cf6',
+              600: '#7c3aed',
+              700: '#6d28d9',
+              900: '#4c1d95',
+            },
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    .gradient-text {
+      background: linear-gradient(135deg, #a78bfa 0%, #2dd4bf 60%, #5eead4 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero-glow {
+      background: radial-gradient(ellipse 80% 60% at 50% -10%, rgba(139, 92, 246, 0.2), transparent);
+    }
+    .card-hover {
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+    .card-hover:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px -12px rgba(139, 92, 246, 0.2);
+      border-color: rgba(45, 212, 191, 0.35);
+    }
+    .photo-ring {
+      background: linear-gradient(135deg, #8b5cf6, #2dd4bf);
+      padding: 3px;
+    }
+  </style>
+</head>
+<body class="bg-slate-950 text-gray-100 font-sans antialiased">
+
+  <!--
+    ═══════════════════════════════════════════════════════════
+    CUSTOMIZE YOUR LINKS — update the values below, then save.
+    ═══════════════════════════════════════════════════════════
+  -->
+  <script>
+    const SITE = {
+      photo: 'images/profile.jpg',
+      linkedin: 'https://www.linkedin.com/in/camilledarley/',
+      github: 'https://github.com/thefeufollet',
+      projects: [
+        {
+          id: 'project-1',
+          title: 'Biology LLM Prompt Engineering',
+          description: 'Designed and refined prompts for large language models applied to biology research questions. Built rubric-based evaluation criteria to assess model accuracy on domain-specific scientific tasks.',
+          tag: 'AI Training',
+          tags: ['Prompt Design', 'Rubric QA', 'Biology'],
+          url: '#',           // Live demo or project page — replace #
+          github: '#',        // GitHub repo — replace #
+        },
+        {
+          id: 'project-2',
+          title: 'Genomic Data Analysis Pipeline',
+          description: 'Developed reproducible workflows in R and Python for processing and analyzing genomic datasets. Applied statistical modeling to identify patterns and generate research-ready outputs.',
+          tag: 'Bioinformatics',
+          tags: ['R', 'Python', 'Genomics'],
+          url: '#',
+          github: 'https://github.com/thefeufollet/Bioinformatics',
+        },
+        {
+          id: 'project-3',
+          title: 'Statistical Modeling in Life Sciences',
+          description: 'Applied advanced statistical methods to biological datasets, translating complex experimental results into clear, actionable insights for research and publication.',
+          tag: 'Data Science',
+          tags: ['Statistics', 'R', 'Visualization'],
+          url: '#',
+          github: '#',
+        },
+        {
+          id: 'project-4',
+          title: 'PhD Research — George Mason University',
+          description: 'Ongoing doctoral research in bioinformatics, exploring computational approaches to genomics, proteomics, and the application of machine learning to life sciences problems.',
+          tag: 'Research',
+          tags: ['Bioinformatics', 'Machine Learning', 'GMU'],
+          url: '#',
+          github: '#',
+        },
+      ],
+    };
+  </script>
+
+  <!-- Navigation -->
+  <header class="fixed inset-x-0 top-0 z-50 border-b border-white/5 bg-slate-950/80 backdrop-blur-md">
+    <nav class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+      <a href="#" class="font-display text-xl font-bold tracking-tight text-white">
+        Camille<span class="text-teal-400">.</span>
+      </a>
+
+      <ul class="hidden items-center gap-8 text-sm font-medium text-gray-400 md:flex">
+        <li><a href="#about" class="transition hover:text-teal-400">About</a></li>
+        <li><a href="#skills" class="transition hover:text-teal-400">Skills</a></li>
+        <li><a href="#projects" class="transition hover:text-teal-400">Projects</a></li>
+        <li><a href="#contact" class="transition hover:text-teal-400">Contact</a></li>
+      </ul>
+
+      <div class="hidden items-center gap-3 md:flex">
+        <a id="nav-linkedin" href="#" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="rounded-lg p-2 text-gray-400 transition hover:bg-white/5 hover:text-purple-400">
+          <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a id="nav-github" href="#" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="rounded-lg p-2 text-gray-400 transition hover:bg-white/5 hover:text-teal-400">
+          <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"/></svg>
+        </a>
+        <a href="#contact" class="rounded-full bg-gradient-to-r from-purple-600 to-teal-600 px-5 py-2 text-sm font-semibold text-white transition hover:from-purple-500 hover:to-teal-500">
+          Get in touch
+        </a>
+      </div>
+
+      <button id="menu-btn" type="button" class="inline-flex items-center justify-center rounded-lg p-2 text-gray-400 hover:bg-white/5 hover:text-white md:hidden" aria-label="Toggle menu" aria-expanded="false">
+        <svg id="menu-open" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        <svg id="menu-close" class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+    </nav>
+
+    <div id="mobile-menu" class="hidden border-t border-white/5 bg-slate-950/95 px-6 py-4 md:hidden">
+      <ul class="flex flex-col gap-4 text-sm font-medium text-gray-400">
+        <li><a href="#about" class="block py-1 transition hover:text-teal-400">About</a></li>
+        <li><a href="#skills" class="block py-1 transition hover:text-teal-400">Skills</a></li>
+        <li><a href="#projects" class="block py-1 transition hover:text-teal-400">Projects</a></li>
+        <li><a href="#contact" class="block py-1 transition hover:text-teal-400">Contact</a></li>
+      </ul>
+      <div class="mt-4 flex gap-3">
+        <a id="mobile-linkedin" href="#" target="_blank" rel="noopener noreferrer" class="flex flex-1 items-center justify-center gap-2 rounded-full border border-purple-500/30 py-2.5 text-sm font-medium text-purple-300 transition hover:bg-purple-500/10">LinkedIn</a>
+        <a id="mobile-github" href="#" target="_blank" rel="noopener noreferrer" class="flex flex-1 items-center justify-center gap-2 rounded-full border border-teal-500/30 py-2.5 text-sm font-medium text-teal-300 transition hover:bg-teal-500/10">GitHub</a>
+      </div>
+      <a href="#contact" class="mt-3 block rounded-full bg-gradient-to-r from-purple-600 to-teal-600 py-2.5 text-center text-sm font-semibold text-white">Get in touch</a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Hero -->
+    <section class="hero-glow relative overflow-hidden pt-32 pb-24 md:pt-40 md:pb-32">
+      <div class="absolute inset-0 -z-10 opacity-40">
+        <div class="absolute left-1/4 top-20 h-72 w-72 rounded-full bg-purple-600/25 blur-3xl"></div>
+        <div class="absolute right-1/4 bottom-10 h-64 w-64 rounded-full bg-teal-500/15 blur-3xl"></div>
+      </div>
+
+      <div class="mx-auto max-w-6xl px-6">
+        <div class="grid items-center gap-12 lg:grid-cols-[1fr_auto]">
+          <div class="max-w-2xl">
+            <p class="mb-4 inline-flex items-center gap-2 rounded-full border border-purple-500/25 bg-purple-500/10 px-4 py-1.5 text-sm font-medium text-purple-300">
+              <span class="h-2 w-2 rounded-full bg-teal-400 animate-pulse"></span>
+              Bioinformatics PhD Student · George Mason University
+            </p>
+
+            <h1 class="font-display text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl md:text-6xl">
+              Professional
+              <span class="gradient-text">AI Trainer</span>
+            </h1>
+
+            <p class="mt-6 text-lg leading-relaxed text-gray-400 md:text-xl">
+              I'm a bioinformatics PhD student at George Mason University with a strong foundation in genomics, data analysis, and AI applications in life sciences. I bridge scientific knowledge with emerging technologies.
+            </p>
+
+            <div class="mt-8 flex flex-wrap gap-3">
+              <a href="#projects" class="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-purple-600 to-teal-600 px-7 py-3 font-semibold text-white transition hover:from-purple-500 hover:to-teal-500">
+                View my work
+                <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+              </a>
+              <a href="#about" class="inline-flex items-center gap-2 rounded-full border border-white/10 px-7 py-3 font-semibold text-gray-300 transition hover:border-teal-500/40 hover:text-white">Learn more</a>
+            </div>
+
+            <div class="mt-8 flex items-center gap-4">
+              <span class="text-sm text-gray-500">Find me on</span>
+              <a id="hero-linkedin" href="#" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-full border border-purple-500/25 bg-purple-500/10 px-4 py-2 text-sm font-medium text-purple-300 transition hover:border-purple-400/50 hover:text-purple-200">
+                <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                LinkedIn
+              </a>
+              <a id="hero-github" href="#" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-full border border-teal-500/25 bg-teal-500/10 px-4 py-2 text-sm font-medium text-teal-300 transition hover:border-teal-400/50 hover:text-teal-200">
+                <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"/></svg>
+                GitHub
+              </a>
+            </div>
+          </div>
+
+          <!-- Profile photo — save your image as images/profile.jpg -->
+          <div class="mx-auto lg:mx-0">
+            <div class="photo-ring rounded-full">
+              <div class="relative h-56 w-56 overflow-hidden rounded-full bg-slate-900 sm:h-64 sm:w-64">
+                <img
+                  id="profile-photo"
+                  src="images/profile.jpg"
+                  alt="Camille Darley"
+                  class="h-full w-full object-cover"
+                  onerror="this.style.display='none'; document.getElementById('photo-fallback').classList.remove('hidden');"
+                >
+                <div id="photo-fallback" class="hidden flex h-full w-full flex-col items-center justify-center bg-gradient-to-br from-purple-900/60 to-teal-900/60 p-6 text-center">
+                  <span class="font-display text-5xl font-bold text-white/90">CD</span>
+                  <p class="mt-3 text-xs leading-relaxed text-gray-400">Add your photo at<br><code class="text-teal-400">images/profile.jpg</code></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-20 grid grid-cols-2 gap-4 sm:grid-cols-4">
+          <div class="rounded-2xl border border-purple-500/10 bg-white/[0.03] p-5">
+            <p class="text-2xl font-bold text-purple-400">PhD</p>
+            <p class="mt-1 text-sm text-gray-500">Bioinformatics</p>
+          </div>
+          <div class="rounded-2xl border border-teal-500/10 bg-white/[0.03] p-5">
+            <p class="text-2xl font-bold text-teal-400">R & Python</p>
+            <p class="mt-1 text-sm text-gray-500">Core languages</p>
+          </div>
+          <div class="rounded-2xl border border-purple-500/10 bg-white/[0.03] p-5">
+            <p class="text-2xl font-bold text-purple-400">LLM</p>
+            <p class="mt-1 text-sm text-gray-500">Prompt engineering</p>
+          </div>
+          <div class="rounded-2xl border border-teal-500/10 bg-white/[0.03] p-5">
+            <p class="text-2xl font-bold text-teal-400">AI</p>
+            <p class="mt-1 text-sm text-gray-500">Model training</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="border-t border-white/5 py-24">
+      <div class="mx-auto max-w-6xl px-6">
+        <div class="grid items-center gap-12 lg:grid-cols-[auto_1fr]">
+          <div class="photo-ring mx-auto hidden rounded-2xl lg:mx-0 lg:block">
+            <img id="about-photo" src="images/profile.jpg" alt="Camille Darley" class="h-48 w-48 rounded-2xl object-cover bg-slate-900" onerror="this.parentElement.classList.add('hidden')">
+          </div>
+          <div>
+            <p class="text-sm font-semibold uppercase tracking-widest text-teal-400">About Me</p>
+            <h2 class="mt-3 font-display text-3xl font-bold text-white md:text-4xl">Where science meets artificial intelligence</h2>
+            <div class="mt-6 space-y-4 text-gray-400 leading-relaxed">
+              <p>My background includes hands-on experience with LLM prompt engineering for biology research and rubric-based model training, as well as proficiency in R, Python, and statistical modeling.</p>
+              <p>I'm passionate about bridging scientific knowledge with emerging technologies. I am eager to learn and grow in the fields of bioinformatics, proteomics, genomics, forensic sciences, machine learning, and artificial intelligence.</p>
+              <p>As a Professional AI Trainer, I focus on developing high-quality training data and evaluation frameworks that help language models reason accurately about complex biological and scientific domains.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-16 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div class="card-hover rounded-2xl border border-white/5 bg-white/[0.02] p-6">
+            <div class="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-purple-500/10 text-purple-400">
+              <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+            </div>
+            <h3 class="font-semibold text-white">AI & LLM Training</h3>
+            <p class="mt-2 text-sm text-gray-500">Rubric-based model evaluation, prompt engineering, and quality assurance for biology-focused AI systems.</p>
+          </div>
+          <div class="card-hover rounded-2xl border border-white/5 bg-white/[0.02] p-6">
+            <div class="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-teal-500/10 text-teal-400">
+              <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
+            </div>
+            <h3 class="font-semibold text-white">Genomics & Bioinformatics</h3>
+            <p class="mt-2 text-sm text-gray-500">Analyzing genomic datasets, building pipelines, and applying computational methods to life sciences research.</p>
+          </div>
+          <div class="card-hover rounded-2xl border border-white/5 bg-white/[0.02] p-6 sm:col-span-2 lg:col-span-1">
+            <div class="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-purple-500/10 text-purple-400">
+              <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+            </div>
+            <h3 class="font-semibold text-white">Statistical Modeling</h3>
+            <p class="mt-2 text-sm text-gray-500">Rigorous data analysis using R, Python, and statistical methods to extract meaningful insights from complex datasets.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="border-t border-white/5 bg-gradient-to-b from-purple-950/20 to-transparent py-24">
+      <div class="mx-auto max-w-6xl px-6">
+        <div class="text-center">
+          <p class="text-sm font-semibold uppercase tracking-widest text-purple-400">Expertise</p>
+          <h2 class="mt-3 font-display text-3xl font-bold text-white md:text-4xl">Skills & Technologies</h2>
+          <p class="mx-auto mt-4 max-w-2xl text-gray-500">A multidisciplinary toolkit spanning computational biology, data science, and AI development.</p>
+        </div>
+
+        <div class="mt-14 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <div>
+            <h3 class="mb-4 text-sm font-semibold uppercase tracking-wider text-gray-500">Languages & Tools</h3>
+            <div class="flex flex-wrap gap-2">
+              <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm text-gray-300">Python</span>
+              <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm text-gray-300">R</span>
+              <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm text-gray-300">Hugging Face</span>
+              <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm text-gray-300">PyTorch Model Training</span>
+              <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm text-gray-300">GitHub</span>
+            </div>
+          </div>
+          <div>
+            <h3 class="mb-4 text-sm font-semibold uppercase tracking-wider text-gray-500">AI & Machine Learning</h3>
+            <div class="flex flex-wrap gap-2">
+              <span class="rounded-full border border-purple-500/25 bg-purple-500/10 px-3 py-1 text-sm text-purple-300">LLM Prompt Engineering</span>
+              <span class="rounded-full border border-teal-500/25 bg-teal-500/10 px-3 py-1 text-sm text-teal-300">Model Training</span>
+              <span class="rounded-full border border-purple-500/25 bg-purple-500/10 px-3 py-1 text-sm text-purple-300">Rubric Evaluation</span>
+              <span class="rounded-full border border-teal-500/25 bg-teal-500/10 px-3 py-1 text-sm text-teal-300">Statistical Modeling</span>
+            </div>
+          </div>
+          <div>
+            <h3 class="mb-4 text-sm font-semibold uppercase tracking-wider text-gray-500">Life Sciences</h3>
+            <div class="flex flex-wrap gap-2">
+              <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm text-gray-300">Genomics</span>
+              <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm text-gray-300">Proteomics</span>
+              <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm text-gray-300">Bioinformatics</span>
+              <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm text-gray-300">Forensic Sciences</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="border-t border-white/5 py-24">
+      <div class="mx-auto max-w-6xl px-6">
+        <div class="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
+          <div>
+            <p class="text-sm font-semibold uppercase tracking-widest text-teal-400">Portfolio</p>
+            <h2 class="mt-3 font-display text-3xl font-bold text-white md:text-4xl">Selected Projects</h2>
+          </div>
+          <p class="max-w-sm text-sm text-gray-500">Research and training work at the intersection of biology, data science, and AI. Update links in the <code class="text-purple-400">SITE</code> config at the top of this file.</p>
+        </div>
+
+        <div id="projects-grid" class="mt-12 grid gap-6 md:grid-cols-2"></div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="border-t border-white/5 py-24">
+      <div class="mx-auto max-w-6xl px-6">
+        <div class="relative overflow-hidden rounded-3xl border border-purple-500/20 bg-gradient-to-br from-purple-900/50 via-slate-900 to-teal-900/40 p-10 md:p-16">
+          <div class="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-purple-500/15 blur-3xl"></div>
+          <div class="absolute -bottom-20 -left-20 h-64 w-64 rounded-full bg-teal-500/10 blur-3xl"></div>
+          <div class="relative">
+            <p class="text-sm font-semibold uppercase tracking-widest text-teal-400">Contact</p>
+            <h2 class="mt-3 font-display text-3xl font-bold text-white md:text-4xl">Let's connect</h2>
+            <p class="mt-4 max-w-xl text-gray-400">Interested in collaborating on bioinformatics research, AI training projects, or data-driven life sciences work? I'd love to hear from you.</p>
+
+            <div class="mt-8 flex flex-col gap-4">
+              <a href="mailto:camilledarleypi@gmail.com" class="inline-flex w-fit items-center gap-3 rounded-full bg-gradient-to-r from-purple-600 to-teal-600 px-7 py-3.5 font-semibold text-white transition hover:from-purple-500 hover:to-teal-500">
+                <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                camilledarleypi@gmail.com
+              </a>
+
+              <div class="flex flex-wrap items-center gap-4">
+                <a id="contact-linkedin" href="#" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-medium text-purple-300 transition hover:text-purple-200">
+                  <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                  LinkedIn
+                </a>
+                <span class="text-gray-700">·</span>
+                <a id="contact-github" href="#" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-medium text-teal-300 transition hover:text-teal-200">
+                  <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"/></svg>
+                  GitHub
+                </a>
+                <span class="text-gray-700">·</span>
+                <p class="text-sm text-gray-500">George Mason University · Fairfax, VA</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="border-t border-white/5 py-8">
+    <div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-6 sm:flex-row">
+      <p class="text-sm text-gray-600">&copy; 2026 Camille Darley. All rights reserved.</p>
+      <div class="flex items-center gap-5">
+        <a id="footer-linkedin" href="#" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="text-gray-600 transition hover:text-purple-400">
+          <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a id="footer-github" href="#" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="text-gray-600 transition hover:text-teal-400">
+          <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"/></svg>
+        </a>
+        <p class="text-sm text-gray-600">Professional AI Trainer · Bioinformatics PhD Student</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Apply SITE config to all link placeholders
+    function applySiteLinks() {
+      const linkMap = {
+        'nav-linkedin': SITE.linkedin,
+        'nav-github': SITE.github,
+        'mobile-linkedin': SITE.linkedin,
+        'mobile-github': SITE.github,
+        'hero-linkedin': SITE.linkedin,
+        'hero-github': SITE.github,
+        'contact-linkedin': SITE.linkedin,
+        'contact-github': SITE.github,
+        'footer-linkedin': SITE.linkedin,
+        'footer-github': SITE.github,
+      };
+      Object.entries(linkMap).forEach(([id, url]) => {
+        const el = document.getElementById(id);
+        if (el) el.href = url;
+      });
+
+      document.getElementById('profile-photo').src = SITE.photo;
+      document.getElementById('about-photo').src = SITE.photo;
+    }
+
+    // Render project cards from SITE.projects
+    function renderProjects() {
+      const grid = document.getElementById('projects-grid');
+      grid.innerHTML = SITE.projects.map((p, i) => {
+        const badgeClass = i % 2 === 0
+          ? 'rounded-full bg-purple-500/10 px-3 py-1 text-xs font-medium text-purple-400'
+          : 'rounded-full bg-teal-500/10 px-3 py-1 text-xs font-medium text-teal-400';
+        const tagHtml = p.tags.map(t => `<span class="text-xs text-gray-600">${t}</span>`).join('<span class="text-xs text-gray-600"> · </span>');
+        const hasLiveLink = p.url && p.url !== '#';
+        const hasGithubLink = p.github && p.github !== '#';
+
+        return `
+          <article id="${p.id}" class="card-hover group flex flex-col rounded-2xl border border-white/5 bg-white/[0.02] p-7">
+            <div class="mb-4 flex items-center justify-between">
+              <span class="${badgeClass}">${p.tag}</span>
+            </div>
+            <h3 class="text-lg font-semibold text-white">${p.title}</h3>
+            <p class="mt-3 flex-1 text-sm leading-relaxed text-gray-500">${p.description}</p>
+            <div class="mt-5 flex flex-wrap gap-2">${tagHtml}</div>
+            <div class="mt-6 flex flex-wrap gap-3 border-t border-white/5 pt-5">
+              <a href="${p.url}" target="_blank" rel="noopener noreferrer"
+                 class="inline-flex items-center gap-1.5 rounded-full border px-4 py-1.5 text-xs font-medium transition
+                        ${hasLiveLink ? 'border-teal-500/30 text-teal-300 hover:bg-teal-500/10' : 'border-white/10 text-gray-500 cursor-default pointer-events-none'}"
+                 ${hasLiveLink ? '' : 'aria-disabled="true" tabindex="-1"'}>
+                <svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                View project
+              </a>
+              <a href="${p.github}" target="_blank" rel="noopener noreferrer"
+                 class="inline-flex items-center gap-1.5 rounded-full border px-4 py-1.5 text-xs font-medium transition
+                        ${hasGithubLink ? 'border-purple-500/30 text-purple-300 hover:bg-purple-500/10' : 'border-white/10 text-gray-500 cursor-default pointer-events-none'}"
+                 ${hasGithubLink ? '' : 'aria-disabled="true" tabindex="-1"'}>
+                <svg class="h-3.5 w-3.5" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"/></svg>
+                GitHub
+              </a>
+            </div>
+          </article>
+        `;
+      }).join('');
+    }
+
+    applySiteLinks();
+    renderProjects();
+
+    // Mobile menu
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuOpen = document.getElementById('menu-open');
+    const menuClose = document.getElementById('menu-close');
+
+    menuBtn.addEventListener('click', () => {
+      const isOpen = !mobileMenu.classList.contains('hidden');
+      mobileMenu.classList.toggle('hidden');
+      menuOpen.classList.toggle('hidden');
+      menuClose.classList.toggle('hidden');
+      menuBtn.setAttribute('aria-expanded', String(!isOpen));
+    });
+
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        menuOpen.classList.remove('hidden');
+        menuClose.classList.add('hidden');
+        menuBtn.setAttribute('aria-expanded', 'false');
+      });
+    });
+  </script>
+</body>
+</html>
